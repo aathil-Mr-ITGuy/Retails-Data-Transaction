@@ -1,0 +1,15 @@
+data_source retail:
+  type: bigquery
+  connection:
+    account_info_json_path: /usr/local/airflow/include/gcp/service_account.json
+    auth_scopes:
+    - https://www.googleapis.com/auth/bigquery
+    - https://www.googleapis.com/auth/cloud-platform
+    - https://www.googleapis.com/auth/drive
+    project_id: 'sapient-cycling-413017'
+    dataset: retail
+
+soda_cloud:
+  host: cloud.soda.io
+  api_key_id: ce966f11-8f04-4a08-8113-869459539303
+  api_key_secret: UlDjpa2h-Uhh-9xmqsxt5nZv7PgzTAZfZ64oVT93DA11TEOC8qjPGg
