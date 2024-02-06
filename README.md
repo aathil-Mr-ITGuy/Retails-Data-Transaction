@@ -1,49 +1,60 @@
-Overview
-========
+```markdown
+# Retail Data Pipeline Project
 
-Welcome to Astronomer! This project was generated after you ran 'astro dev init' using the Astronomer CLI. This readme describes the contents of the project, as well as how to run Apache Airflow on your local machine.
+This project showcases an end-to-end data pipeline for retail transaction analysis. The pipeline includes data ingestion, processing, transformation, and visualization using various technologies.
 
-Project Contents
-================
+## Project Overview
 
-Your Astro project contains the following files and folders:
+The project demonstrates the following processes:
 
-- dags: This folder contains the Python files for your Airflow DAGs. By default, this directory includes two example DAGs:
-    - `example_dag_basic`: This DAG shows a simple ETL data pipeline example with three TaskFlow API tasks that run daily.
-    - `example_dag_advanced`: This advanced DAG showcases a variety of Airflow features like branching, Jinja templates, task groups and several Airflow operators.
-- Dockerfile: This file contains a versioned Astro Runtime Docker image that provides a differentiated Airflow experience. If you want to execute other commands or overrides at runtime, specify them here.
-- include: This folder contains any additional files that you want to include as part of your project. It is empty by default.
-- packages.txt: Install OS-level packages needed for your project by adding them to this file. It is empty by default.
-- requirements.txt: Install Python packages needed for your project by adding them to this file. It is empty by default.
-- plugins: Add custom or community plugins for your project to this file. It is empty by default.
-- airflow_settings.yaml: Use this local-only file to specify Airflow Connections, Variables, and Pools instead of entering them in the Airflow UI as you develop DAGs in this project.
+1. **Data Ingestion**: CSV files are uploaded to Google Cloud Storage (GCS) using Apache Airflow.
+2. **Data Processing**: The raw data is processed and transformed using Apache Airflow, dbt (data build tool), and Cosmos.
+3. **Data Quality Checks**: Data quality checks are performed using Soda.
+4. **Data Visualization**: Dashboards are created using Metaverse.
 
-Deploy Your Project Locally
-===========================
+## Technologies Used
 
-1. Start Airflow on your local machine by running 'astro dev start'.
+- **Apache Airflow**: For orchestrating the data pipeline.
+- **Astro CLI**: For setting up the Airflow local environment.
+- **dbt (data build tool)**: For transforming and modeling the data.
+- **Soda**: For data quality checks.
+- **Google Cloud Platform (GCP)**: For storing and processing data.
+- **Metaverse**: For creating interactive dashboards.
 
-This command will spin up 4 Docker containers on your machine, each for a different Airflow component:
+## Dataset
 
-- Postgres: Airflow's Metadata Database
-- Webserver: The Airflow component responsible for rendering the Airflow UI
-- Scheduler: The Airflow component responsible for monitoring and triggering tasks
-- Triggerer: The Airflow component responsible for triggering deferred tasks
+The dataset used in this project can be found on Kaggle: [Online Retail Dataset](https://www.kaggle.com/datasets/tunguz/online-retail)
 
-2. Verify that all 4 Docker containers were created by running 'docker ps'.
+## Prerequisites
 
-Note: Running 'astro dev start' will start your project with the Airflow Webserver exposed at port 8080 and Postgres exposed at port 5432. If you already have either of those ports allocated, you can either [stop your existing Docker containers or change the port](https://docs.astronomer.io/astro/test-and-troubleshoot-locally#ports-are-not-available).
+Before running the data pipeline, make sure you have the following installed:
 
-3. Access the Airflow UI for your local Airflow project. To do so, go to http://localhost:8080/ and log in with 'admin' for both your Username and Password.
+- Docker
+- Astro CLI
+- Soda
+- Google Cloud Platform (GCP) account
 
-You should also be able to access your Postgres Database at 'localhost:5432/postgres'.
+## Setup
 
-Deploy Your Project to Astronomer
-=================================
+1. Clone this repository to your local machine.
+2. Install Docker and the Astro CLI if you haven't already.
+3. Set up your Google Cloud Platform (GCP) account and configure authentication.
+4. Download the Online Retail dataset from Kaggle and place it in the appropriate directory.
+5. Follow the instructions in the project documentation to configure and run the data pipeline.
 
-If you have an Astronomer account, pushing code to a Deployment on Astronomer is simple. For deploying instructions, refer to Astronomer documentation: https://docs.astronomer.io/cloud/deploy-code/
+## Usage
 
-Contact
-=======
+Follow the step-by-step instructions in the project documentation to set up and run the data pipeline.
 
-The Astronomer CLI is maintained with love by the Astronomer team. To report a bug or suggest a change, reach out to our support.
+## Contributing
+
+Contributions are welcome! Feel free to submit pull requests or open issues for any improvements or suggestions.
+
+
+
+## Author
+- Aathil Ahamed
+  - LinkedIn: [aathilks](https://www.linkedin.com/in/aathilks/)
+  - Email: atldeae@gmail.com
+
+```
